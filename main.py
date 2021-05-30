@@ -20,11 +20,23 @@ from pytz import timezone
 
 fmt = "%Y-%m-%d %H:%M:%S " 
 timezonelist = ['America/Bogota'] 
+
 for zone in timezonelist: 
     now_time = datetime.now(timezone(zone)) 
     print(now_time.strftime(fmt))
 ##--------------------------------------------
-tipo_ingreso=int(input("Si eres empleado del parqueadero ingresa 1 si eres usuario 0:"))
+
+
+import  time
+
+def main():
+    inicio_de_tiempo = time.time()
+    tiempo_final = time.time() 
+    tiempo_transcurrido = tiempo_final - inicio_de_tiempo
+    print ("\nTomo %d segundos." % (tiempo_transcurrido))
+main()
+
+tipo_ingreso=int(input("Si eres empleado del parqueadero ingresa 1 si eres usuario 0: "))
 while (tipo_ingreso==1):
  empleado=(input("Digite Usuario: "))
  contraseña=((input("Digite contraseña: ")))
@@ -35,7 +47,7 @@ while (tipo_ingreso==1):
 
 while(tipo_ingreso==0):
     n=input("Ingrese su rol en la universidad: ")
-
+    
 
     while True:
         cd=input("Ingrese su número de cédula: ")
@@ -62,7 +74,9 @@ while(tipo_ingreso==0):
       for fila in range(len(ingreso)):
         if(ingreso[fila][2]==placa):
           print("Estimad@ "+nombre_usuario+"\n"+"Su número de parqueadero es: "+str(ingreso[fila][3])+"\n"+"Su piso es el No: "+str(ingreso[fila][4]))
+          print("Hora de ingreso: ",(now_time.strftime(fmt)))
           break
+          
   #cuentas cedulas hayprint(listaCc.count(cc))
     while True: 
       cc=int(input("Ingrese su CC para saber si cuenta con un descuento 🤑  💲: "))
@@ -74,3 +88,4 @@ while(tipo_ingreso==0):
        print("no tine descuento ♦️ : ",cc)
 
        print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ") 
+  
