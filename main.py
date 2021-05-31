@@ -27,16 +27,16 @@ for zone in timezonelist:
 ##--------------------------------------------
 
 
-import  time
 
-def main():
-    inicio_de_tiempo = time.time()
-    tiempo_final = time.time() 
-    tiempo_transcurrido = tiempo_final - inicio_de_tiempo
-    print ("\nTomo %d segundos." % (tiempo_transcurrido))
-main()
-
-tipo_ingreso=int(input("Si eres empleado del parqueadero ingresa 1 si eres usuario 0: "))
+while True:
+  tipo_ingreso=int(input("Si eres empleado del parqueadero ingresa 1 si eres usuario 0: "))
+  try:
+    if(tipo_ingreso>=0 and tipo_ingreso<=1):
+       break
+    else:
+      print("La opcion seleccionada no es válida ⚠️")  
+  except:
+   print("Intente de nuevo! ⚠️") 
 while (tipo_ingreso==1):
  empleado=(input("Digite Usuario: "))
  contraseña=((input("Digite contraseña: ")))
@@ -86,6 +86,5 @@ while(tipo_ingreso==0):
         print("tiene descuento del 20% por su fidelidad 💲",cc)
     else:
        print("no tine descuento ♦️ : ",cc)
-
        print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ") 
   
