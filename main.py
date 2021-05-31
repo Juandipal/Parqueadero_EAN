@@ -88,15 +88,21 @@ while(tipo_ingreso==0):
             break
           
     #cuentas cedulas hayprint(listaCc.count(cc))
-    cc=int(input("Ingrese su número de cédula para saber si cuenta con un descuento 🤑  💲: "))
-    listaCc=[1019134469,1019134469,1019134469,1019134469]
-    listaCc.append(cc)
-    if(listaCc.count(cc)==5):
+    
+    while True:
+     cc=int(input("Ingrese su número de cédula para saber si cuenta con un descuento 🤑 💲: "))
+     try:
+       cc=int(cc)
+       listaCc=[1019134469,1019134469,1019134469,1019134469]
+       listaCc.append(cc)
+       if(listaCc.count(cc)==5):
         print("tiene descuento del 20% por su fidelidad 💲",cc)
-    else:
-       print("no tine descuento ♦️ : ",cc)
-       print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ")
-
+       else:
+        print("no tine descuento ♦️ : ",cc)
+        print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ")
+        break
+     except:
+        print("Ingrese solo números!")
     #total apgar
     import time
     import random
