@@ -52,8 +52,6 @@ while (tipo_ingreso==1):
 
 while(tipo_ingreso==0):
     n=input("Ingrese su rol en la universidad: ")
-    
-
     while True:
         cd=input("Ingrese su número de cédula: ")
         try:
@@ -63,105 +61,115 @@ while(tipo_ingreso==0):
          else:
           print("El número de cedula debe ser positivo⚠️")  
         except:
-         print("Ingrese solo numero su cédula ⚠️")  
-    
-
+         print("Ingrese solo numero su cédula ⚠️")
+        break    
+    nombre_usuario=input("Ingrese su nombre: ")
+    placa=input("ingrese placa: ")
     while True:
-      nombre_usuario=input("Ingrese su nombre: ")
-      placa=input("ingrese placa: ")
-      tipo_vehiculo=int(input("ingrese tipo de vehiculo: 1-->para carro 🚗, 2-->para moto 🏍️, 3-->para bicicleta🚲: "))
-      ingreso=[["diana casas",1,"efr134",1,1],["brayan torres",1,"asd123",2,1]]
-      for fila in range(0,240):
+        tipo_vehiculo=int(input("ingrese tipo de vehiculo: 1-->para carro 🚗, 2-->para moto 🏍️, 3-->para bicicleta🚲: "))
+        try:
+         tipo_vehiculo=int(tipo_vehiculo)
+         if(tipo_vehiculo==1 or tipo_vehiculo==2 or tipo_vehiculo==3):
+           break
+         else:
+            print("Número fuera del rango, ingrese un número nuevamente ⚠️")
+        except:
+            print("Ingrese solo números del 1 al 3")
+    ingreso=[["diana casas",1,"efr134",1,1],["brayan torres",1,"asd123",2,1]]
+    for fila in range(0,240):
         if(parquedero[fila][1]==tipo_vehiculo and parquedero[fila][2]=="libre"):
-         parquedero[fila][2]="ocupado"
-         usuario=[nombre_usuario,tipo_vehiculo,placa,parquedero[fila][0],parquedero[fila][3]]
-         ingreso.append(usuario)
-      for fila in range(len(ingreso)):
+            parquedero[fila][2]="ocupado"
+            usuario=[nombre_usuario,tipo_vehiculo,placa,parquedero[fila][0],parquedero[fila][3]]
+            ingreso.append(usuario)
+    for fila in range(len(ingreso)):
         if(ingreso[fila][2]==placa):
-          print("Estimad@ "+nombre_usuario+"\n"+"Su número de parqueadero es: "+str(ingreso[fila][3])+"\n"+"Su piso es el No: "+str(ingreso[fila][4]))
-          print("Hora de ingreso: ",(now_time.strftime(fmt)))
-          break
+            print("Estimad@ "+nombre_usuario+"\n"+"Su número de parqueadero es: "+str(ingreso[fila][3])+"\n"+"Su piso es el No: "+str(ingreso[fila][4]))
+            print("Hora de ingreso: ",(now_time.strftime(fmt)))
+            break
           
-  #cuentas cedulas hayprint(listaCc.count(cc))
-    while True: 
-      cc=int(input("Ingrese su CC para saber si cuenta con un descuento 🤑  💲: "))
+    #cuentas cedulas hayprint(listaCc.count(cc))
+    cc=int(input("Ingrese su número de cédula para saber si cuenta con un descuento 🤑  💲: "))
     listaCc=[1019134469,1019134469,1019134469,1019134469]
     listaCc.append(cc)
     if(listaCc.count(cc)==5):
         print("tiene descuento del 20% por su fidelidad 💲",cc)
     else:
        print("no tine descuento ♦️ : ",cc)
-       print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ") 
-  
+       print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ")
 
-#total apgar
-import time
-import random
-n=random.randint(0,500)
-tiempo2_min=time.gmtime()
-hs=(tiempo2_min[3]*60)
-ms=tiempo2_min[4]
-hs_min=me+he
-x=hs-he
-if(tipo_ingreso==0):
-  if(x<0):
-    if(listaCc.count(cc)==5):
-      if(tipo_vehiculo==1):
-        t1=he_min-1400
-        T=t1+hs_min
-        tp=(T+n-((T+n)*0.2))*80
-        print("Total a pagar "+str(tp)+" COP")
-      elif(tipo_vehiculo==2):
-        t1=he_min-1400
-        T=t1+hs_min
-        tp=(T+n-((T+n)*0.2))*60
-        print("Total a pagar "+str(tp)+" COP")
-      else:
-        t1=he_min-1400
-        T=t1+hs_min
-        tp=(T+n-((T+n)*0.2))*40
-        print("Total a pagar "+str(tp)+" COP")
+    #total apgar
+    import time
+    import random
+    n=random.randint(0,500)
+    tiempo2_min=time.gmtime()
+    hs=(tiempo2_min[3]*60)
+    ms=tiempo2_min[4]
+    hs_min=me+he
+    x=hs-he
+    if(tipo_ingreso==0):
+      if(x<0):
+        if(listaCc.count(cc)==5):
+         if(tipo_vehiculo==1):
+            t1=he_min-1400
+            T=t1+hs_min
+            tp=(T+n-((T+n)*0.2))*80
+            print("Total a pagar "+str(tp)+" COP")
+         elif(tipo_vehiculo==2):
+            t1=he_min-1400
+            T=t1+hs_min
+            tp=(T+n-((T+n)*0.2))*60
+            print("Total a pagar "+str(tp)+" COP")
+         else:
+            t1=he_min-1400
+            T=t1+hs_min
+            tp=(T+n-((T+n)*0.2))*40
+            print("Total a pagar "+str(tp)+" COP")
+        else:
+         if(tipo_vehiculo==1):
+            t1=he_min-1400
+            T=t1+hs_min
+            tp=(T+n)*80
+            print("Total a pagar "+str(tp)+" COP")
+         elif(tipo_vehiculo==2):
+            t1=he_min-1400
+            T=t1+hs_min
+            tp=(T+n)*60
+            print("Total a pagar "+str(tp)+" COP")
+         else:
+            t1=he_min-1400
+            T=t1+hs_min
+            tp=(T+n)*40
+            print("Total a pagar "+str(tp)+" COP")
     else:
-      if(tipo_vehiculo==1):
-        t1=he_min-1400
-        T=t1+hs_min
-        tp=(T+n)*80
-        print("Total a pagar "+str(tp)+" COP")
-      elif(tipo_vehiculo==2):
-        t1=he_min-1400
-        T=t1+hs_min
-        tp=(T+n)*60
-        print("Total a pagar "+str(tp)+" COP")
-      else:
-        t1=he_min-1400
-        T=t1+hs_min
-        tp=(T+n)*40
-        print("Total a pagar "+str(tp)+" COP")
-  else:
-    if(listaCc.count(cc)==5):
-      if(tipo_vehiculo==1):
-        t=hs_min-he_min
-        tp=((t+n)*0.2)*80
-        print("Total a pagar "+str(tp)+" COP")
-      elif(tipo_vehiculo==2):
-        t=hs_min-he_min
-        tp=((t+n)*0.2)*60
-        print("Total a pagar "+str(tp)+" COP")
-      else:
-        t=hs_min-he_min
-        tp=((t+n)*0.2)*40
-        print("Total a pagar "+str(tp)+" COP")
-    else:
-      if(tipo_vehiculo==1):
-        t=hs_min-he_min
-        tp=(t+n)*80
-        print("Total a pagar "+str(tp)+" COP")
-      elif(tipo_vehiculo==2):
-        t=hs_min-he_min
-        tp=(t+n)*60
-        print("Total a pagar "+str(tp)+" COP")
-      else:
-        t=hs_min-he_min
-        tp=(t+n)*40
-        print("Total a pagar "+str(tp)+" COP")
-      
+        if(listaCc.count(cc)==5):
+         if(tipo_vehiculo==1):
+            t=hs_min-he_min
+            tp=((t+n)*0.2)*80
+            print("Total a pagar "+str(tp)+" COP")
+         elif(tipo_vehiculo==2):
+            t=hs_min-he_min
+            tp=((t+n)*0.2)*60
+            print("Total a pagar "+str(tp)+" COP")
+         else:
+            t=hs_min-he_min
+            tp=((t+n)*0.2)*40
+            print("Total a pagar "+str(tp)+" COP")
+        else:
+         if(tipo_vehiculo==1):
+            t=hs_min-he_min
+            tp=(t+n)*80
+            print("Total a pagar "+str(tp)+" COP")
+         elif(tipo_vehiculo==2):
+            t=hs_min-he_min
+            tp=(t+n)*60
+            print("Total a pagar "+str(tp)+" COP")
+         else:
+            t=hs_min-he_min
+            tp=(t+n)*40
+            print("Total a pagar "+str(tp)+" COP")
+  
+    print("Dirijase al cajero para realizar el pago💵 💸")
+    print("✨  Muchas gracias ✨")
+
+    print("ESPERAMOS LE HAYA GUSTADO NUESTRO SERVICIO  🤝🏻")
+    print("¡¡¡VUELVA PRONTO!!!, FELIZ DÍA 🤗 😁 ")
