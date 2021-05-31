@@ -25,7 +25,12 @@ for zone in timezonelist:
     now_time = datetime.now(timezone(zone)) 
     print(now_time.strftime(fmt))
 ##--------------------------------------------
-
+#tiempo entrada carro
+import time
+tiempo1_min=time.gmtime()
+he=(tiempo1_min[3]*60)
+me=tiempo1_min[4]
+he_min=me+he
 
 
 while True:
@@ -88,3 +93,75 @@ while(tipo_ingreso==0):
        print("no tine descuento ♦️ : ",cc)
        print("Muchas gracias por confiar en nosotros, dirijase a su parqueadero ") 
   
+
+#total apgar
+import time
+import random
+n=random.randint(0,1000)
+tiempo2_min=time.gmtime()
+hs=(tiempo2_min[3]*60)
+ms=tiempo2_min[4]
+hs_min=me+he
+x=hs-he
+if(tipo_ingreso==0):
+  if(x<0):
+    if(listaCc.count(cc)==5):
+      if(tipo_vehiculo==1):
+        t1=he_min-1400
+        T=t1+hs_min
+        tp=(T+n-((T+n)*0.2))*80
+        print("Total a pagar "+str(tp)+" COP")
+      elif(tipo_vehiculo==2):
+        t1=he_min-1400
+        T=t1+hs_min
+        tp=(T+n-((T+n)*0.2))*60
+        print("Total a pagar "+str(tp)+" COP")
+      else:
+        t1=he_min-1400
+        T=t1+hs_min
+        tp=(T+n-((T+n)*0.2))*40
+        print("Total a pagar "+str(tp)+" COP")
+    else:
+      if(tipo_vehiculo==1):
+        t1=he_min-1400
+        T=t1+hs_min
+        tp=(T+n)*80
+        print("Total a pagar "+str(tp)+" COP")
+      elif(tipo_vehiculo==2):
+        t1=he_min-1400
+        T=t1+hs_min
+        tp=(T+n)*60
+        print("Total a pagar "+str(tp)+" COP")
+      else:
+        t1=he_min-1400
+        T=t1+hs_min
+        tp=(T+n)*40
+        print("Total a pagar "+str(tp)+" COP")
+  else:
+    if(listaCc.count(cc)==5):
+      if(tipo_vehiculo==1):
+        t=hs_min-he_min
+        tp=((t+n)*0.2)*80
+        print("Total a pagar "+str(tp)+" COP")
+      elif(tipo_vehiculo==2):
+        t=hs_min-he_min
+        tp=((t+n)*0.2)*60
+        print("Total a pagar "+str(tp)+" COP")
+      else:
+        t=hs_min-he_min
+        tp=((t+n)*0.2)*40
+        print("Total a pagar "+str(tp)+" COP")
+    else:
+      if(tipo_vehiculo==1):
+        t=hs_min-he_min
+        tp=(t+n)*80
+        print("Total a pagar "+str(tp)+" COP")
+      elif(tipo_vehiculo==2):
+        t=hs_min-he_min
+        tp=(t+n)*60
+        print("Total a pagar "+str(tp)+" COP")
+      else:
+        t=hs_min-he_min
+        tp=(t+n)*40
+        print("Total a pagar "+str(tp)+" COP")
+      
