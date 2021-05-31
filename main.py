@@ -25,7 +25,7 @@ for zone in timezonelist:
     now_time = datetime.now(timezone(zone)) 
     print(now_time.strftime(fmt))
 ##--------------------------------------------
-#tiempo entrada carro
+#tiempo entrada vehiculo
 import time
 tiempo1_min=time.gmtime()
 he=(tiempo1_min[3]*60)
@@ -97,7 +97,7 @@ while(tipo_ingreso==0):
 #total apgar
 import time
 import random
-n=random.randint(0,1000)
+n=random.randint(0,500)
 tiempo2_min=time.gmtime()
 hs=(tiempo2_min[3]*60)
 ms=tiempo2_min[4]
