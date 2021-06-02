@@ -123,9 +123,9 @@ while(tipo_ingreso==0):
             print("Ingrese solo números del 1 al 3")
     ingreso=[["diana casas",1,"efr134",1,1],["brayan torres",1,"asd123",2,1]]
     for fila in range(0,240):
-        if(parquedero[fila][1]==tipo_vehiculo and parquedero[fila][2]=="libre"):
+        if(parquedero[fila][1]==tipo_vehiculo and parqueadero[fila][2]=="libre"):
             parqueadero[fila][2]="ocupado"
-            usuario=[nombre_usuario,tipo_vehiculo,placa,parqueadero[fila][0],parquedero[fila][3]]
+            usuario=[nombre_usuario,tipo_vehiculo,placa,parqueadero[fila][0],parqueadero[fila][3]]
             ingreso.append(usuario)
     print("\n")
     for fila in range(len(ingreso)):
@@ -138,7 +138,7 @@ while(tipo_ingreso==0):
                     if(lista[fila][2]=="libre"):
                         aux.append([lista[fila][0],lista[fila][3]])
                         return aux
-            print(libre(parquedero))
+            print(libre(parqueadero))
             break
     print("\n")      
     #cuentas cedulas hayprint(listaCc.count(cc))
