@@ -133,13 +133,6 @@ while(tipo_ingreso==0):
         if(ingreso[fila][2]==placa):
             print("Estimad@ "+nombre_usuario+"\n"+"Su número de parqueadero es: "+str(ingreso[fila][3])+"\n"+"Su piso es el No: "+str(ingreso[fila][4]))
             print("Hora de ingreso: ",(now_time.strftime(fmt)))
-            def libre(lista)->list:
-                aux=[]
-                for fila in range(len(lista)):
-                    if(lista[fila][2]=="libre"):
-                        aux.append([lista[fila][0],lista[fila][3]])
-                        return aux
-            print(libre(parqueadero))
             break
         
     print("\n")      
@@ -229,7 +222,7 @@ while(tipo_ingreso==0):
                 tp=(t+n)*40
                 print("Total a pagar "+str(tp)+" COP")
   
-    print("\n")
+    
     print("Dirijase al cajero para realizar el pago💵 💸")
     print("✨  Muchas gracias ✨")
     print("\n")
