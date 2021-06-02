@@ -54,7 +54,7 @@ while (tipo_ingreso==1):
  print("Bienvenido Admin. 🎉")
  break
 while(tipo_ingreso==1):
-  menu_1=int(input("1.Crear un nuevo usuario 2.Verificar si ya existe una cuenta de empleado 3.Ver espacios libres 4.Ver espacios ocupados 5.Salir "))
+  menu_1=int(input(" 1.Crear un nuevo usuario\n 2.Verificar si ya existe una cuenta de empleado \n 3.Ver espacios libres \n 4.Ver espacios ocupados \n 5.Salir \n "))
   while menu_1==1:
     usuario=(input("Nombre de Usuario: "))
     contraseña=(input("Digite cotraseña: "))
